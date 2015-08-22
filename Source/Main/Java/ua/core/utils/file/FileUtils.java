@@ -7,6 +7,8 @@ package ua.core.utils.file;
 
 import java.io.*;
 import java.nio.channels.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.ArrayList;
@@ -41,7 +43,9 @@ public class FileUtils {
 		// Declarations:
 		// //////////////////////////////////////////////////////////////////////////
 
+		FileInputStream sourceInputStream	= null;
 		FileChannel sourceFileChannel		= null;
+		FileOutputStream destinationOutputStream	= null;
 		FileChannel destinationFileChannel	= null;
 
 		
@@ -50,14 +54,15 @@ public class FileUtils {
 		// //////////////////////////////////////////////////////////////////////////
 
 		if (! destinationFile.exists ()) {
-
 			destinationFile.createNewFile ();
 		}
 
 		try {
 
-			sourceFileChannel = new FileInputStream (sourceFile).getChannel ();
-			destinationFileChannel = new FileOutputStream (destinationFile).getChannel ();
+			sourceInputStream = new FileInputStream (sourceFile);
+			sourceFileChannel = sourceInputStream.getChannel();
+			destinationOutputStream = new FileOutputStream (destinationFile);
+			destinationFileChannel = destinationOutputStream.getChannel();
 			destinationFileChannel.transferFrom (sourceFileChannel, 0, sourceFileChannel.size ());
 
 			destinationFile.setLastModified (sourceFile.lastModified ());
@@ -65,13 +70,19 @@ public class FileUtils {
 		finally {
 
 			if (sourceFileChannel != null) {
-
 				sourceFileChannel.close ();
 			}
 
-			if (destinationFileChannel != null) {
+			if (sourceInputStream != null) {
+				sourceInputStream.close ();
+			}
 
+			if (destinationFileChannel != null) {
 				destinationFileChannel.close ();
+			}
+
+			if (destinationOutputStream != null) {
+				destinationOutputStream.close ();
 			}
 		}
 	}
@@ -525,5 +536,10 @@ public class FileUtils {
 	public static boolean isFileExists (String fileName) {
 
 		return (new File (fileName)).exists ();
+	}
+	
+	public static void move (String sourcePath, String targetPath) throws IOException {
+		
+		Files.move (Paths.get (sourcePath), Paths.get(targetPath));
 	}
 }
