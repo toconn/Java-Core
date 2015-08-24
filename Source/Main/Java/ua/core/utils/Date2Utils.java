@@ -18,7 +18,7 @@ import static ua.core.utils.DateConst.*;
 * 2015.06.30 - Java 8.0 LocalDateTime
 */
 public class Date2Utils {
-		
+
 	/**
 	 * Is date after the test date.
 	 * 
@@ -385,6 +385,17 @@ public class Date2Utils {
 		return date.format (DATE2_FORMATTER_ISO_DATE);
 	}
 	
+	/**
+	 * Returns the date in date format using the ISO format.
+	 * 
+	 * @param dateTime
+	 * @return
+	 */
+	public static String toIsoDateString (LocalDateTime dateTime) {
+
+		return dateTime.format (DATE2_FORMATTER_ISO_DATE);
+	}
+	
 	
 	/**
 	 * Returns the date in date time format using the ISO format.
@@ -392,9 +403,20 @@ public class Date2Utils {
 	 * @param date
 	 * @return
 	 */
-	public static String toIsoTimestampString (LocalDate date) {
+	public static String toIsoDateTimeString (LocalDate date) {
 
 		return date.format (DATE2_FORMATTER_ISO_TIMESTAMP);
+	}
+
+	/**
+	 * Returns the date in date time format using the ISO format.
+	 * 
+	 * @param dateTime
+	 * @return
+	 */
+	public static String toIsoDateTimeString (LocalDateTime dateTime) {
+
+		return dateTime.format (DATE2_FORMATTER_ISO_TIMESTAMP);
 	}
 
 	/**
@@ -408,6 +430,28 @@ public class Date2Utils {
 		return date.format (DATE2_FORMATTER_ISO_TIME);
 	}
 	
+	/**
+	 * Returns the date in time format using the ISO format.
+	 * 
+	 * @param dateTime
+	 * @return
+	 */
+	public static String toIsoTimeString (LocalDateTime dateTime) {
+
+		return dateTime.format (DATE2_FORMATTER_ISO_TIME);
+	}
+	
+	/**
+	 * Returns the date in time format using the ISO format.
+	 * 
+	 * @param time
+	 * @return
+	 */
+	public static String toIsoTimeString (LocalTime time) {
+
+		return time.format (DATE2_FORMATTER_ISO_TIME);
+	}
+
 	/**
 	 * Returns the date in seconds from 1970/1/1.
 	 * 
