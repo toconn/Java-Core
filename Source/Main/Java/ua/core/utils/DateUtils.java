@@ -353,12 +353,12 @@ public class DateUtils {
 
 	public static Date toDateFromUaTimestamp (String dateString) {
 		
-		return toDateFromFormat (dateString, DateConst.DATE_FORMAT_UA_TIMESTAMP);
+		return toDateFromFormat (dateString, DateConst.DATE_FORMAT_UA_DATETIME);
 	}
 
 	public static Date toDateFromUaTimestampAmPm (String dateString) {
 		
-		return toDateFromFormat (dateString, DateConst.DATE_FORMAT_UA_TIMESTAMP_AMPM);
+		return toDateFromFormat (dateString, DateConst.DATE_FORMAT_UA_DATETIME_AMPM);
 	}
 
 	/**
@@ -392,7 +392,7 @@ public class DateUtils {
 	 */
 	public static String toIsoTimestampString (Date date) {
 
-		return toString (date, DateConst.DATE_FORMAT_ISO_TIMESTAMP);
+		return toString (date, DateConst.DATE_FORMAT_ISO_DATETIME);
 	}
 
 	/**
@@ -477,7 +477,7 @@ public class DateUtils {
 	 */
 	public static String toTimestampAmPmString (Date date) {
 		
-		return toString (date, DateConst.DATE_FORMAT_UA_TIMESTAMP_AMPM);
+		return toString (date, DateConst.DATE_FORMAT_UA_DATETIME_AMPM);
 	}
 
 	/**
@@ -488,7 +488,7 @@ public class DateUtils {
 	 */
 	public static String toTimestampString (Date date) {
 		
-		return toString (date, DateConst.DATE_FORMAT_UA_TIMESTAMP);
+		return toString (date, DateConst.DATE_FORMAT_UA_DATETIME);
 	}
 
 	public static Date toTimestampFirstOfDay (Date date) {
@@ -537,12 +537,12 @@ public class DateUtils {
 
 	public static String toUaTimestampString (Date date) {
 		
-		return toString (date, DateConst.DATE_FORMAT_UA_TIMESTAMP);		
+		return toString (date, DateConst.DATE_FORMAT_UA_DATETIME);		
 	}
 
 	public static String toUaTimestampAmPmString (Date date) {
 		
-		return toString (date, DateConst.DATE_FORMAT_UA_TIMESTAMP_AMPM);		
+		return toString (date, DateConst.DATE_FORMAT_UA_DATETIME_AMPM);		
 	}
 
 	public static String toUaTimeString (Date date) {
