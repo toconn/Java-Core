@@ -1,10 +1,12 @@
 package ua.core.utils;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 import static ua.core.utils.DateConst.*;
 
@@ -18,6 +20,16 @@ import static ua.core.utils.DateConst.*;
 * 2015.06.30 - Java 8.0 LocalDateTime
 */
 public class Date2Utils {
+
+	public static long age (LocalDateTime localDateTime1) {
+		
+		return diffInYears (localDateTime1, LocalDateTime.now());
+	}
+		
+	public static long diffInYears (LocalDateTime localDateTime1, LocalDateTime localDateTime2) {
+		
+		return ChronoUnit.YEARS.between (localDateTime1, localDateTime2);
+	}
 
 	/**
 	 * Is date after the test date.
@@ -306,6 +318,32 @@ public class Date2Utils {
 		}
 	}
 
+	/**
+	 * Null safe conversion from sql Timestamp to standard Date.
+	 * 
+	 * null returns null.
+	 * 
+	 * @param timestamp
+	 * @return
+	 */
+	public static LocalDateTime toDateTime (java.util.Date date) {
+		
+		return LocalDateTime.ofInstant (date.toInstant(), ZoneId.systemDefault());
+	}
+
+	/**
+	 * Null safe conversion from Instant to Local Date Time.
+	 * 
+	 * null returns null.
+	 * 
+	 * @param timestamp
+	 * @return
+	 */
+	public static LocalDateTime toDateTime (Instant instant) {
+		
+		return LocalDateTime.ofInstant (instant, ZoneId.systemDefault());
+	}
+	
 	/**
 	 * Null safe conversion from sql Timestamp to standard Date.
 	 * 

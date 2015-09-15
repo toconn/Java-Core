@@ -39,6 +39,11 @@ public class DateUtils {
 		return calendar.getTime();
 	}
 	
+	public static final long age (Date date1) {
+		
+		return Date2Utils.age (Date2Utils.toDateTime (date1));
+	}
+	
 	public static long dayCount (Date date1, Date date2){
 		
 		Date date1Noon;
