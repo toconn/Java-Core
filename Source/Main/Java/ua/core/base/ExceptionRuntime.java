@@ -8,4 +8,9 @@ public class ExceptionRuntime extends ExceptionBaseRuntime {
 		
 		super (e);
 	}
+	
+	public ExceptionRuntime (String message, Exception e) {
+		
+		super (message, e);
+	}
 }
