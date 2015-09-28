@@ -8,14 +8,18 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+
+import ua.core.base.ExceptionItemNotFound;
 import ua.core.base.ExceptionRemote;
 import ua.core.base.ExceptionRuntime;
+import ua.core.beans.MediaType;
 
 public class HttpUtils {
 	
 	public static final int HTTP_RESPONSE_OK = 200;
+	public static final int HTTP_NOT_FOUND = 404;
 	
-	public static String sendDelete (String urlString) throws ExceptionRuntime, ExceptionRemote {
+	public static String sendDelete (String urlString) throws ExceptionRuntime, ExceptionRemote, ExceptionItemNotFound {
 
 		HttpURLConnection	httpConnection = null;
 
@@ -23,7 +27,7 @@ public class HttpUtils {
 		return connectRead (httpConnection);
 	}
 	
-	public static String sendGet (String urlString) throws ExceptionRuntime, ExceptionRemote {
+	public static String sendGet (String urlString) throws ExceptionRuntime, ExceptionRemote, ExceptionItemNotFound {
 
 		HttpURLConnection	httpConnection = null;
 
@@ -31,27 +35,31 @@ public class HttpUtils {
 		return connectRead (httpConnection);
 	}
 	
-	public static String sendPost (String urlString, String requestData) throws ExceptionRuntime, ExceptionRemote {
+	public static String sendPost (String urlString, String requestData, MediaType mediaType) throws ExceptionRuntime, ExceptionRemote, ExceptionItemNotFound {
 		
 		HttpURLConnection	httpConnection = null;
 
 		httpConnection = newHttpConnection (urlString, "POST");
-		return connectWriteRead (httpConnection, requestData);
+		return connectWriteRead (httpConnection, requestData, mediaType);
 	}
 	
 	
 	
-	private static String connectRead (HttpURLConnection httpConnnection) throws ExceptionRemote, ExceptionRuntime {
+	private static String connectRead (HttpURLConnection httpConnnection) throws ExceptionRemote, ExceptionRuntime, ExceptionItemNotFound {
 		
 		String response;
 		
 		try {
 			
 			httpConnnection.connect();
-			response = readResponse (httpConnnection);
 			validateStatus (httpConnnection);
+			response = readResponse (httpConnnection);
 
 			return response;
+		}
+		catch (ExceptionItemNotFound e) {
+			
+			throw e;
 		}
 		catch (IOException e) {
 	
@@ -69,33 +77,41 @@ public class HttpUtils {
 		}
 	}
 	
-	private static String connectWriteRead (HttpURLConnection httpConnection, String requestData) throws ExceptionRemote, ExceptionRuntime {
+	private static String connectWriteRead (HttpURLConnection httpConnection, String requestData, MediaType mediaType) throws ExceptionRemote, ExceptionRuntime, ExceptionItemNotFound {
 		
 		byte[]	dataBytes;
 		String	response;
 		
 		try {
-			
-			dataBytes = requestData.getBytes (StandardCharsets.UTF_8);
 
+			dataBytes = requestData.getBytes (StandardCharsets.UTF_8);
+			
 			httpConnection.setDoOutput(true);										// Required to send data.
 			httpConnection.setRequestProperty ("charset", "utf-8");
 			httpConnection.setRequestProperty ("Content-Length", Integer.toString (dataBytes.length));
-
+			
+			if (mediaType != null) {
+				httpConnection.setRequestProperty ("content-type", mediaType.getTypeString());
+			}
+			
 			httpConnection.connect();
 			
 			try	(DataOutputStream dataOutputStream = new DataOutputStream (httpConnection.getOutputStream())) {
 				dataOutputStream.write (dataBytes);
 			}
 			
+			validateStatus (httpConnection);
+			
 			response = readResponse (httpConnection);
 			
-			validateStatus (httpConnection);
-
 			return response;
 		}
+		catch (ExceptionItemNotFound e) {
+			
+			throw e;
+		}
 		catch (IOException e) {
-	
+			
 			throw new ExceptionRemote ("Unable to make http request.", e);
 		}
 		catch (Exception e) {
@@ -147,10 +163,15 @@ public class HttpUtils {
 		return stringBuilder.toString();
 	}
 	
-	private static void validateStatus (HttpURLConnection httpConnection) throws ExceptionRemote, IOException {
+	private static void validateStatus (HttpURLConnection httpConnection) throws ExceptionRemote, ExceptionItemNotFound, IOException {
 		
 		if (httpConnection.getResponseCode() != HTTP_RESPONSE_OK) {
-			throw new ExceptionRemote ("Http GET request faied: " + httpConnection.getResponseCode() + " " + httpConnection.getResponseMessage());
+			if (httpConnection.getResponseCode() == HTTP_NOT_FOUND) {
+				throw new ExceptionItemNotFound ("");
+			}
+			else {
+				throw new ExceptionRemote ("Http request faied: " + httpConnection.getResponseCode() + " " + httpConnection.getResponseMessage());
+			}
 		}
 	}
 }
