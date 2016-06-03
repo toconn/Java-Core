@@ -675,6 +675,28 @@ public class StringUtils {
 		return stringBuffer.toString ();
 	}
 	
+	/**
+	 * Null safe, length safe function to return the left side of a string.
+	 * If less than length, returns full string.
+	 * 
+	 * @param text
+	 * @param length
+	 * @return
+	 */
+	public static String left (String text, int length, boolean includeEllipsis) {
+		
+		if (text != null && text.length () > length) {
+			if (includeEllipsis) {
+				return trim (text.substring (0, length)) + "...";
+			}
+			else {
+				return text.substring (0, length);
+			}
+		}
+		else {
+			return text;
+		}
+	}
 	
 	/**
 	 * Returns the length of a string.
@@ -1044,6 +1066,19 @@ public class StringUtils {
 		}
 		
 		return words;
+	}
+	
+	public static List <String> toWords (String string, String splitString) {
+		
+		List<String> strings;
+		
+		strings = new ArrayList <String> ();
+		
+		if (isNotEmpty (string)) {
+			strings = Arrays.asList (string.split (splitString));
+		}
+		
+		return strings;
 	}
 	
 	/**
