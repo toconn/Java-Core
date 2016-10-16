@@ -58,7 +58,7 @@ public class StringSetIgnoreCase implements Set <String> {
 	}
 
 	@Override
-	public void clear () {
+	public void clear() {
 
 		map.clear();
 	}
@@ -90,13 +90,13 @@ public class StringSetIgnoreCase implements Set <String> {
 	}
 
 	@Override
-	public boolean isEmpty () {
+	public boolean isEmpty() {
 		
 		return map.isEmpty();
 	}
 
 	@Override
-	public Iterator <String> iterator () {
+	public Iterator <String> iterator() {
 
 		return map.values().iterator();
 	}
@@ -139,13 +139,13 @@ public class StringSetIgnoreCase implements Set <String> {
 	}
 
 	@Override
-	public int size () {
+	public int size() {
 
 		return map.size();
 	}
 
 	@Override
-	public Object[] toArray () {
+	public Object[] toArray() {
 
 		return map.values().toArray();
 	}
@@ -163,7 +163,7 @@ public class StringSetIgnoreCase implements Set <String> {
 			map = new HashMap <String, String> (size);
 		}
 		else {
-			map = new HashMap <String, String> ();
+			map = new HashMap <String, String>();
 		}
 	}
 }

@@ -26,7 +26,7 @@ public class CollectionUtils {
 	public static <T> List <T> add (List <T> list, T item) {
 
 		if (list == null) {
-			list = new ArrayList <T> ();
+			list = new ArrayList <T>();
 		}
 		
 		list.add (item);
@@ -80,7 +80,7 @@ public class CollectionUtils {
 		
 		List <T> list;
 		
-		list = new ArrayList <T> ();
+		list = new ArrayList <T>();
 		list.addAll (collection);
 		
 		return list;
@@ -96,9 +96,9 @@ public class CollectionUtils {
 		
 		List <T> list;
 		
-		list = new ArrayList <T> ();
+		list = new ArrayList <T>();
 		
-		for (Object key : map.keySet ()) {
+		for (Object key : map.keySet()) {
 			list.add (map.get (key));
 		}
 		
@@ -152,7 +152,7 @@ public class CollectionUtils {
 		
 		Set <T> set;
 		
-		set = new HashSet <T> ();
+		set = new HashSet <T>();
 		set.addAll (collection);
 		
 		return set;
@@ -171,11 +171,11 @@ public class CollectionUtils {
 	
 			for (T item : collection) {
 				
-				if (first.isNotFirst ()) {
+				if (first.isNotFirst()) {
 					stringBuilder.append (separator);
 				}
 				
-				stringBuilder.append (item.toString ());
+				stringBuilder.append (item.toString());
 			}
 		}
 		
@@ -208,7 +208,7 @@ public class CollectionUtils {
 	 */
 	public static <T> boolean isEmpty (Collection <T> collection) {
 		
-		if (collection == null || collection.size () == 0) {
+		if (collection == null || collection.size() == 0) {
 			return true;
 		}
 		else {
@@ -218,7 +218,7 @@ public class CollectionUtils {
 
 	public static boolean isEmpty (Map <?,?> map) {
 		
-		return map == null || map.isEmpty ();
+		return map == null || map.isEmpty();
 	}
 
 
@@ -291,7 +291,7 @@ public class CollectionUtils {
 			// Exit routine.
 		}
 			
-		return collectionCommand.getResult ();
+		return collectionCommand.getResult();
 	}
 	
 	/**
@@ -313,9 +313,9 @@ public class CollectionUtils {
 		
 		for (Item item: items) {
 				
-			if (first.isFirst ()) {
+			if (first.isFirst()) {
 				try {
-					method = item.getClass ().getMethod (methodName);
+					method = item.getClass().getMethod (methodName);
 				}
 				catch (SecurityException | NoSuchMethodException e) {
 					throw new ExceptionRuntime (e);
@@ -399,7 +399,7 @@ public class CollectionUtils {
 	}
 
 
-	private static Comparator <String> getStringComparatorIgnoreCase () {
+	private static Comparator <String> getStringComparatorIgnoreCase() {
 		
 		Comparator<String> comparator;
 		

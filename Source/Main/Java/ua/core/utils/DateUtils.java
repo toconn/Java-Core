@@ -238,7 +238,7 @@ public class DateUtils {
 	 * @param day
 	 * @return
 	 */
-	public static Date newDateToday () {
+	public static Date newDateToday() {
 		
 		Calendar calendar;
 		
@@ -260,7 +260,7 @@ public class DateUtils {
 	 * @param day
 	 * @return
 	 */
-	public static Date newDateTodayNoon () {
+	public static Date newDateTodayNoon() {
 		
 		Calendar calendar;
 		
@@ -281,7 +281,7 @@ public class DateUtils {
 	 * @param day
 	 * @return
 	 */
-	public static Date newDateYesterday () {
+	public static Date newDateYesterday() {
 		
 		Calendar calendar;
 		
@@ -297,7 +297,7 @@ public class DateUtils {
 	}
 
 	
-	public static Date newDateYesterdayNoon () {
+	public static Date newDateYesterdayNoon() {
 		
 		Calendar calendar;
 		
@@ -323,7 +323,7 @@ public class DateUtils {
 	public static Date toDate (java.sql.Timestamp timestamp) {
 		
 		if (timestamp != null) {
-			return new Date (timestamp.getTime ());
+			return new Date (timestamp.getTime());
 		}
 		else {
 			return null;

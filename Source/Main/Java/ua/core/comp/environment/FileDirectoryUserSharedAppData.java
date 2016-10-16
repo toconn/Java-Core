@@ -16,9 +16,9 @@ public class FileDirectoryUserSharedAppData implements FileDirectory {
 	}
 	
 
-	public String getDirectory () {
+	public String getDirectory() {
 		
-		if (OSPropertiesFactory.getInstance ().isOSWindows ()) {
+		if (OSPropertiesFactory.getInstance().isOSWindows()) {
 
 			return FileUtils.getPath (EnvironmentService.evaluateVariables (IEnvironmentConst.ENVIRONMENT_SHARED_APP_DATA_DIR_WINDOWS), subdirectory);
 		}

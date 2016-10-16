@@ -15,7 +15,7 @@ public class IsFirst {
 	
 	private boolean first = true;
 
-	public boolean isFirst () {
+	public boolean isFirst() {
 		
 		boolean first = this.first;
 		

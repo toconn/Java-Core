@@ -18,7 +18,7 @@ public enum BooleanType {
 
 	// MAPPING HANDLERS:
 	
-	private static final StringMapIgnoreCase <BooleanType>	LOOKUP_MAP	= new StringMapIgnoreCase <BooleanType> ();
+	private static final StringMapIgnoreCase <BooleanType>	LOOKUP_MAP	= new StringMapIgnoreCase <BooleanType>();
 
 	
 	static {
@@ -86,17 +86,17 @@ public enum BooleanType {
 	}
 	
 	
-	public String getCode () {
+	public String getCode() {
 		
 		return this.code;
 	}
 	
-	public boolean getValue () {
+	public boolean getValue() {
 		
 		return this.value;
 	}
 	
-	public String toString () {
+	public String toString() {
 		
 		return this.code;
 	}

@@ -67,23 +67,23 @@ public class DirectoryUtils {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		if (! sourceDirectory.exists ())
+		if (! sourceDirectory.exists())
 			
-			throw new ExceptionItemNotFound (MessageUtils.toString (MessageConst.MESSAGE_FILE_NOT_FOUND, sourceDirectory.getName ()));
+			throw new ExceptionItemNotFound (MessageUtils.toString (MessageConst.MESSAGE_FILE_NOT_FOUND, sourceDirectory.getName()));
 			
 		
-		if (sourceDirectory.isDirectory ()) {
+		if (sourceDirectory.isDirectory()) {
 			
 			// Create destination directory...
 			
-			if (! targetDirectory.exists ())
+			if (! targetDirectory.exists())
 				
-				targetDirectory.mkdir ();
+				targetDirectory.mkdir();
 			
 			
 			// Read source directory...
 			
-			dirList = sourceDirectory.list ();
+			dirList = sourceDirectory.list();
 			
 			// Copy contents...
 			
@@ -116,9 +116,9 @@ public class DirectoryUtils {
 
 		directory = new File (path);
 
-		if (!directory.exists ()) {
+		if (!directory.exists()) {
 
-			directory.mkdirs ();
+			directory.mkdirs();
 		}
 
 	}
@@ -187,7 +187,7 @@ public class DirectoryUtils {
     			
     			if (directoryPathList == null)
     				
-    				directoryPathList = new ArrayList<String> ();
+    				directoryPathList = new ArrayList<String>();
     		
     			directoryPathList.add (pathName);
     			break;
@@ -223,7 +223,7 @@ public class DirectoryUtils {
 		// Get directory listing...
 
 		directoryFile		= new File (directory);
-		directoryFileList	= Arrays.asList (directoryFile.listFiles (new FileFilterDirectory ()));
+		directoryFileList	= Arrays.asList (directoryFile.listFiles (new FileFilterDirectory()));
 		
 		return directoryFileList;
 	}
@@ -254,7 +254,7 @@ public class DirectoryUtils {
 		// Get directory listing...
 
 		directoryFile		= new File (directory);
-		directoryFileList	= Arrays.asList (directoryFile.listFiles (new FileFilterDirectory ()));
+		directoryFileList	= Arrays.asList (directoryFile.listFiles (new FileFilterDirectory()));
 		
 		
 		// If include subdirectories...
@@ -263,7 +263,7 @@ public class DirectoryUtils {
 		
 			for (File subDirFile : directoryFileList) {
 				
-				directoryFileList.addAll (getDirectoryDirectoryList (subDirFile.getPath (), includeSubdirectories));
+				directoryFileList.addAll (getDirectoryDirectoryList (subDirFile.getPath(), includeSubdirectories));
 			}
 		}
 		
@@ -337,9 +337,9 @@ public class DirectoryUtils {
 		
 			for (File subFile : directoryFileList) {
 				
-				if (subFile.isDirectory ()) {
+				if (subFile.isDirectory()) {
 					
-					directoryFileList.addAll (getDirectoryFileList (subFile.getPath (), includeSubdirectories));
+					directoryFileList.addAll (getDirectoryFileList (subFile.getPath(), includeSubdirectories));
 				}
 			}
 		}
@@ -439,7 +439,7 @@ public class DirectoryUtils {
 		// ////////////////////////////////////////////////////////////////
 
 		directoryFile	= new File (directory);
-		dirStringList	= Arrays.asList (directoryFile.list ());
+		dirStringList	= Arrays.asList (directoryFile.list());
 
 		return dirStringList;
 	}
@@ -487,6 +487,6 @@ public class DirectoryUtils {
 
 		directory = new File (directoryName);
 		
-		return (directory.exists () && directory.isDirectory ());
+		return (directory.exists() && directory.isDirectory());
 	}
 }

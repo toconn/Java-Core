@@ -28,7 +28,7 @@ public class DateRange {
 	private Date startTimestamp;
 
 
-	public DateRange () {}
+	public DateRange() {}
 
 	public DateRange (Date startTimestamp, Date endTimestamp) {
 		this.startTimestamp = startTimestamp;
@@ -42,8 +42,8 @@ public class DateRange {
 	}
 
 
-	public Date getEndTimestamp () { return endTimestamp; }
-	public Date getStartTimestamp () { return startTimestamp; }
+	public Date getEndTimestamp() { return endTimestamp; }
+	public Date getStartTimestamp() { return startTimestamp; }
 
 	public void setEndTimestamp (Date endTimestamp) { this.endTimestamp = endTimestamp; }
 	public void setStartTimestamp (Date startTimestamp) { this.startTimestamp = startTimestamp; }

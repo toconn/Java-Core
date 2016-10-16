@@ -5,9 +5,9 @@ public class ExceptionInvalidValue extends ExceptionBase {
 
 	private static final long serialVersionUID = 6322170300529366221L;
 
-	public ExceptionInvalidValue () {
+	public ExceptionInvalidValue() {
 
-		super ();
+		super();
 	}
 
 	public ExceptionInvalidValue (String message) {

@@ -150,7 +150,7 @@ public class StringUtils {
 	
 		if (mainString != null && matchString != null) {
 			
-			return mainString.toLowerCase ().contains (matchString.toLowerCase ());
+			return mainString.toLowerCase().contains (matchString.toLowerCase());
 		}
 		else if (mainString == null && matchString == null) {
 			
@@ -372,7 +372,7 @@ public class StringUtils {
 			
 			return true;	
 		}
-		else if (text.trim ().length() == 0) {
+		else if (text.trim().length() == 0) {
 			
 			return true;
 		}
@@ -417,7 +417,7 @@ public class StringUtils {
 		
 		if (isNotEmpty (text) && text.length() >= 1) {
 				
-			return text.charAt (text.length () - 1) ==  endingChar;
+			return text.charAt (text.length() - 1) ==  endingChar;
 		}
 		
 		return false;
@@ -429,7 +429,7 @@ public class StringUtils {
 	 */
 	public static boolean isEndsWith (String text, String endString) {
 		
-		if (isNotEmpty (text) && isNotEmpty (endString) && text.length() >= endString.length ()) {
+		if (isNotEmpty (text) && isNotEmpty (endString) && text.length() >= endString.length()) {
 				
 			return text.endsWith (endString);
 		}
@@ -450,7 +450,7 @@ public class StringUtils {
 		
 		if (isNotEmpty (text) && text.length() >= 1) {
 				
-			return Character.toLowerCase (text.charAt (text.length () - 1)) ==  Character.toLowerCase (endingChar);
+			return Character.toLowerCase (text.charAt (text.length() - 1)) ==  Character.toLowerCase (endingChar);
 		}
 		
 		return false;
@@ -463,9 +463,9 @@ public class StringUtils {
 	 */
 	public static boolean isEndsWithIgnoreCase (String text, String endString) {
 		
-		if (isNotEmpty (text) && isNotEmpty (endString) && text.length() >= endString.length ()) {
+		if (isNotEmpty (text) && isNotEmpty (endString) && text.length() >= endString.length()) {
 				
-			return text.toLowerCase ().endsWith (endString.toLowerCase ());
+			return text.toLowerCase().endsWith (endString.toLowerCase());
 		}
 		
 		return false;
@@ -633,7 +633,7 @@ public class StringUtils {
 		
 		if (isNotEmpty (text) && text.length() >= startingText.length()) {
 				
-			return isEqual (text.substring (0, startingText.length()).toLowerCase (), startingText.toLowerCase ());
+			return isEqual (text.substring (0, startingText.length()).toLowerCase(), startingText.toLowerCase());
 		}
 		
 		return false;
@@ -657,7 +657,7 @@ public class StringUtils {
 		
 		// Main:
 		
-		stringBuffer	= new StringBuffer ();
+		stringBuffer	= new StringBuffer();
 		isFirst			= true;
 		
 		for (String string : stringList) {
@@ -672,7 +672,7 @@ public class StringUtils {
 			stringBuffer.append (string);
 		}
 		
-		return stringBuffer.toString ();
+		return stringBuffer.toString();
 	}
 	
 	/**
@@ -685,7 +685,7 @@ public class StringUtils {
 	 */
 	public static String left (String text, int length, boolean includeEllipsis) {
 		
-		if (text != null && text.length () > length) {
+		if (text != null && text.length() > length) {
 			if (includeEllipsis) {
 				return trim (text.substring (0, length)) + "...";
 			}
@@ -709,7 +709,7 @@ public class StringUtils {
 	public static int length (String string) {
 		
 		if (string != null) {
-			return string.length ();
+			return string.length();
 		}
 		else {
 			return 0;
@@ -848,7 +848,7 @@ public class StringUtils {
 			}
 		}
 		else {
-			splitList = new ArrayList <> ();
+			splitList = new ArrayList <>();
 		}
 		
 		return splitList;
@@ -876,11 +876,11 @@ public class StringUtils {
 		
 		if (length (string) > 1) {
 			
-			return string.substring (0, 1).toLowerCase () + string.substring (1);
+			return string.substring (0, 1).toLowerCase() + string.substring (1);
 		}
 		else if (length (string) > 1) {
 			
-			return string.toLowerCase ();
+			return string.toLowerCase();
 		}
 		else {
 			return string;
@@ -900,11 +900,11 @@ public class StringUtils {
 		
 		if (length (string) > 1) {
 			
-			return string.substring (0, 1).toUpperCase () + string.substring (1);
+			return string.substring (0, 1).toUpperCase() + string.substring (1);
 		}
 		else if (length (string) == 1) {
 			
-			return string.toUpperCase ();
+			return string.toUpperCase();
 		}
 		else {
 			return string;
@@ -989,7 +989,7 @@ public class StringUtils {
 	public static String toLowerCase (String string) {
 	
 		if (string != null) {
-			return string.toLowerCase ();
+			return string.toLowerCase();
 		}
 		else {
 			return null;
@@ -1013,9 +1013,9 @@ public class StringUtils {
 			
 			index = string.indexOf (searchString);
 			
-			if (index > -1 && (index + searchString.length () < string.length ())) {
+			if (index > -1 && (index + searchString.length() < string.length())) {
 				
-				return string.substring (index + searchString.length ());
+				return string.substring (index + searchString.length());
 			}
 			else {
 			
@@ -1036,7 +1036,7 @@ public class StringUtils {
 	public static String toUpperCase (String string) {
 	
 		if (string != null) {
-			return string.toUpperCase ();
+			return string.toUpperCase();
 		}
 		else {
 			return null;
@@ -1062,7 +1062,7 @@ public class StringUtils {
 		}
 		else {
 			
-			words = new ArrayList <String> ();
+			words = new ArrayList <String>();
 		}
 		
 		return words;
@@ -1072,7 +1072,7 @@ public class StringUtils {
 		
 		List<String> strings;
 		
-		strings = new ArrayList <String> ();
+		strings = new ArrayList <String>();
 		
 		if (isNotEmpty (string)) {
 			strings = Arrays.asList (string.split (splitString));

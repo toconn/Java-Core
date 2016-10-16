@@ -17,7 +17,7 @@ public abstract class AbstractAppProperties implements ua.core.comp.apppropertie
 			throw new ExceptionInvalidValue();
 		}
 		
-		return booleanType.getValue ();
+		return booleanType.getValue();
 	}
 	
 	@Override
@@ -27,7 +27,7 @@ public abstract class AbstractAppProperties implements ua.core.comp.apppropertie
 			return Integer.parseInt (getString (name));
 		}
 		catch (Exception e) {
-			throw new ExceptionInvalidValue ();
+			throw new ExceptionInvalidValue();
 		}
 	}
 
@@ -38,7 +38,7 @@ public abstract class AbstractAppProperties implements ua.core.comp.apppropertie
 			return Long.parseLong (getString (name));
 		}
 		catch (Exception e) {
-			throw new ExceptionInvalidValue ();
+			throw new ExceptionInvalidValue();
 		}
 	}
 
@@ -93,7 +93,7 @@ public abstract class AbstractAppProperties implements ua.core.comp.apppropertie
 	@Override
 	public void set (String name, boolean value) {
 
-		setItem (name, BooleanType.getInstance (value).toString ());
+		setItem (name, BooleanType.getInstance (value).toString());
 	}
 
 	@Override

@@ -19,7 +19,7 @@ public class StringLineIterable implements Iterable <String> {
 	}
 
 	@Override
-	public Iterator <String> iterator () {
+	public Iterator <String> iterator() {
 
 		return new StringLineIterator (string);
 	}

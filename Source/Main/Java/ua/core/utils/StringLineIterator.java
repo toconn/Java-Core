@@ -25,14 +25,14 @@ public class StringLineIterator implements Iterator <String> {
 	}
 
 	@Override
-	public boolean hasNext () {
+	public boolean hasNext() {
 		
 		// Has next line been read?
 		
 		if (! this.nextLineRead) {
 			
 			this.nextLineRead = true;
-			this.nextLine = nextLine ();
+			this.nextLine = nextLine();
 		}
 		
 		
@@ -47,13 +47,13 @@ public class StringLineIterator implements Iterator <String> {
 	}
 
 	@Override
-	public String next () {
+	public String next() {
 
 		// Has next line been read?
 		
 		if (! this.nextLineRead) {
 		
-			this.nextLine = nextLine ();
+			this.nextLine = nextLine();
 		}
 		
 		// Clean next line flag.
@@ -63,13 +63,13 @@ public class StringLineIterator implements Iterator <String> {
 	}
 
 	@Override
-	public void remove () {
+	public void remove() {
 
 		// Ignore. No removing.
 	}
 	
 	
-	private String nextLine () {
+	private String nextLine() {
 		
 		// Declarations:
 	
@@ -79,7 +79,7 @@ public class StringLineIterator implements Iterator <String> {
 		// Code:
 		
 		try {
-			nextLine = bufferedReader.readLine ();
+			nextLine = bufferedReader.readLine();
 		}
 		catch (IOException e) {
 			nextLine = null;

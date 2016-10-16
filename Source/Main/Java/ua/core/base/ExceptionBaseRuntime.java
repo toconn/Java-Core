@@ -11,7 +11,7 @@ public abstract class ExceptionBaseRuntime extends RuntimeException {
 
 	private static final long	serialVersionUID = -3138741202946024745L;
 
-	private List <String>		messageList = new ArrayList <String> ();
+	private List <String>		messageList = new ArrayList <String>();
 
 	
 	public ExceptionBaseRuntime() {

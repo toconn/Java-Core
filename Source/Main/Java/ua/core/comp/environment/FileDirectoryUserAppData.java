@@ -21,9 +21,9 @@ public class FileDirectoryUserAppData implements FileDirectory {
 	}
 	
 
-	public String getDirectory () {
+	public String getDirectory() {
 		
-		if (OSPropertiesFactory.getInstance ().isOSWindows ()) {
+		if (OSPropertiesFactory.getInstance().isOSWindows()) {
 
 			return FileUtils.getPath (EnvironmentService.evaluateVariables (IEnvironmentConst.ENVIRONMENT_USER_APP_DATA_DIR_WINDOWS), subdirectory);
 		}

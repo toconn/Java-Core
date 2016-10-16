@@ -9,7 +9,7 @@ public class OSPropertiesFactory {
 	
 	private volatile static OSProperties instance;
 	
-	public static OSProperties getInstance () {
+	public static OSProperties getInstance() {
 		
 		// Lazy Initialize
 		// Double Checked Locking:
@@ -20,7 +20,7 @@ public class OSPropertiesFactory {
 				
 				if (instance == null) {
 
-					OSProperties newInstance = new DefaultOSProperties (JavaUtils.getOSName (), JavaUtils.getFileSeparator (), JavaUtils.getLineSeparator (), JavaUtils.getPathSeparator ());
+					OSProperties newInstance = new DefaultOSProperties (JavaUtils.getOSName(), JavaUtils.getFileSeparator(), JavaUtils.getLineSeparator(), JavaUtils.getPathSeparator());
 					instance = newInstance;
 				}
 			}

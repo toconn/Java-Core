@@ -16,12 +16,12 @@ public class IsEvenOdd {
 	private boolean even = false;
 
 	
-	public boolean isEven () {
+	public boolean isEven() {
 		even = ! even;
 		return ! even;
 	}
 	
-	public boolean isOdd () {
+	public boolean isOdd() {
 		return ! isEven();
 	}
 }

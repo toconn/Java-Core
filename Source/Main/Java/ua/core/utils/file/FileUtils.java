@@ -53,8 +53,8 @@ public class FileUtils {
 		// Code:
 		// //////////////////////////////////////////////////////////////////////////
 
-		if (! destinationFile.exists ()) {
-			destinationFile.createNewFile ();
+		if (! destinationFile.exists()) {
+			destinationFile.createNewFile();
 		}
 
 		try {
@@ -63,26 +63,26 @@ public class FileUtils {
 			sourceFileChannel = sourceInputStream.getChannel();
 			destinationOutputStream = new FileOutputStream (destinationFile);
 			destinationFileChannel = destinationOutputStream.getChannel();
-			destinationFileChannel.transferFrom (sourceFileChannel, 0, sourceFileChannel.size ());
+			destinationFileChannel.transferFrom (sourceFileChannel, 0, sourceFileChannel.size());
 
-			destinationFile.setLastModified (sourceFile.lastModified ());
+			destinationFile.setLastModified (sourceFile.lastModified());
 		}
 		finally {
 
 			if (sourceFileChannel != null) {
-				sourceFileChannel.close ();
+				sourceFileChannel.close();
 			}
 
 			if (sourceInputStream != null) {
-				sourceInputStream.close ();
+				sourceInputStream.close();
 			}
 
 			if (destinationFileChannel != null) {
-				destinationFileChannel.close ();
+				destinationFileChannel.close();
 			}
 
 			if (destinationOutputStream != null) {
-				destinationOutputStream.close ();
+				destinationOutputStream.close();
 			}
 		}
 	}
@@ -186,7 +186,7 @@ public class FileUtils {
     			
     			if (fileDirList == null)
     				
-    				fileDirList = new ArrayList <String> ();
+    				fileDirList = new ArrayList <String>();
     		
     			fileDirList.add (pathName);
     			break;
@@ -217,10 +217,10 @@ public class FileUtils {
 			try {
 
 				dummyClass = new NameValuePair (null, null);
-				fileURL = dummyClass.getClass ().getClassLoader ().getResource (fileName);
+				fileURL = dummyClass.getClass().getClassLoader().getResource (fileName);
 
 				if (fileURL != null) {
-					filePath = URLDecoder.decode (fileURL.getPath (), IFileConst.FILE_ENCODING_UTF8);
+					filePath = URLDecoder.decode (fileURL.getPath(), IFileConst.FILE_ENCODING_UTF8);
 				}
 
 				if (filePath != null) {
@@ -258,7 +258,7 @@ public class FileUtils {
 		// ///////////////////////////////
 
 		file = new File (path);
-		newPath = file.getCanonicalPath ();
+		newPath = file.getCanonicalPath();
 
 		return newPath;
 	}
@@ -315,7 +315,7 @@ public class FileUtils {
         
         if (CollectionUtils.isNotEmpty (directoryNameList)) {
         	
-        	fileNameList = new ArrayList<String> ();
+        	fileNameList = new ArrayList<String>();
         	
         	for (String directoryName: directoryNameList) {
         		
@@ -358,14 +358,14 @@ public class FileUtils {
 		// ///////////////////////////////
 
 		currentFile = new File (path);
-		currentPath = currentFile.getCanonicalPath ();
+		currentPath = currentFile.getCanonicalPath();
 
 		currentFile = new File (currentPath);
-		parentFile = currentFile.getParentFile ();
+		parentFile = currentFile.getParentFile();
 
 		if (parentFile != null) {
 
-			return parentFile.getCanonicalPath ();
+			return parentFile.getCanonicalPath();
 		}
 		else {
 
@@ -412,7 +412,7 @@ public class FileUtils {
 
 		file	= new File (filePath);
 		
-		return file.getParent ();
+		return file.getParent();
 	}	
 
 
@@ -439,7 +439,7 @@ public class FileUtils {
 
 		file	= new File (filePath);
 		
-		return file.getName ();
+		return file.getName();
 	}
 	
 	
@@ -490,16 +490,16 @@ public class FileUtils {
 		
 		OSProperties osProps;
 
-		osProps = OSPropertiesFactory.getInstance ();
+		osProps = OSPropertiesFactory.getInstance();
 		
 
 		if (StringUtils.isNotEmpty (path)) {
 
-			if (! osProps.isOSWindows ()) {
+			if (! osProps.isOSWindows()) {
 
 				// Check unix file name...
 
-				if (StringUtils.isEqual (path.charAt (0), osProps.getFileSeparator ().charAt (0))) {
+				if (StringUtils.isEqual (path.charAt (0), osProps.getFileSeparator().charAt (0))) {
 
 					return true;
 				}
@@ -508,11 +508,11 @@ public class FileUtils {
 
 				// Check dos file name...
 
-				if (StringUtils.isEqual (path.charAt (0), osProps.getFileSeparator ().charAt (0))) {
+				if (StringUtils.isEqual (path.charAt (0), osProps.getFileSeparator().charAt (0))) {
 
 					return true;
 				}
-				else if (path.length () > 2 && ":".equals (path.substring (1, 2))) {
+				else if (path.length() > 2 && ":".equals (path.substring (1, 2))) {
 
 					return true;
 				}
@@ -535,7 +535,7 @@ public class FileUtils {
 	 */
 	public static boolean isFileExists (String fileName) {
 
-		return (new File (fileName)).exists ();
+		return (new File (fileName)).exists();
 	}
 	
 	public static void move (String sourcePath, String targetPath) throws IOException {

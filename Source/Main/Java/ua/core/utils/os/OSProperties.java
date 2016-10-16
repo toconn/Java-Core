@@ -29,6 +29,6 @@ public interface OSProperties {
 	 * @return
 	 */
 	public List <String> getPathSeparators();
-	public boolean isOSOsx ();
-	public boolean isOSWindows ();
+	public boolean isOSOsx();
+	public boolean isOSWindows();
 }

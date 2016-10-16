@@ -13,22 +13,22 @@ public class SimpleTimer implements Timer {
 	private TimerStatus	status		= TimerStatus.None;
 
 	
-	public SimpleTimer () {
+	public SimpleTimer() {
 
-		start ();
+		start();
 	}
 	
 	
-	public void start () {
+	public void start() {
 
-		this.startTime	= System.currentTimeMillis ();
+		this.startTime	= System.currentTimeMillis();
 		this.stopTime	= 0;
 		this.status		= TimerStatus.Started;
 	}
 
-	public void stop () {
+	public void stop() {
 
-		this.stopTime	= System.currentTimeMillis ();
+		this.stopTime	= System.currentTimeMillis();
 		this.status		= TimerStatus.Stopped;
 	}
 
@@ -37,7 +37,7 @@ public class SimpleTimer implements Timer {
 	 * 
 	 * @return
 	 */
-	public long getElapsedTimeMS () {
+	public long getElapsedTimeMS() {
 
 		long elapsed;
 
@@ -46,7 +46,7 @@ public class SimpleTimer implements Timer {
 			
 			case Started:
 			
-				elapsed = (System.currentTimeMillis () - startTime);
+				elapsed = (System.currentTimeMillis() - startTime);
 				break;
 				
 			case Stopped:
@@ -63,7 +63,7 @@ public class SimpleTimer implements Timer {
 		return elapsed;
 	}
 	
-	public String toString () {
+	public String toString() {
 
 		return TimerUtils.elapsedTimeSecFormatPrecision (this);
 	}

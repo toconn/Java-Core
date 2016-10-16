@@ -248,7 +248,7 @@ public class Date2Utils {
 	 * @param day
 	 * @return
 	 */
-	public static LocalDateTime newDateTimeToday () {
+	public static LocalDateTime newDateTimeToday() {
 		
 		LocalDate		dateToday = LocalDate.now();
 		LocalTime		timeMidnight = LocalTime.of (0, 0, 0);
@@ -265,7 +265,7 @@ public class Date2Utils {
 	 * @param day
 	 * @return
 	 */
-	public static LocalDateTime newDateTimeTodayNoon () {
+	public static LocalDateTime newDateTimeTodayNoon() {
 		
 		LocalDate		dateToday = LocalDate.now();
 		LocalTime		timeMidnight = LocalTime.of (12, 0, 0);
@@ -281,7 +281,7 @@ public class Date2Utils {
 	 * @param day
 	 * @return
 	 */
-	public static LocalDateTime newDateYesterday () {
+	public static LocalDateTime newDateYesterday() {
 		
 		LocalDate		dateToday = LocalDate.now().minusDays (1);
 		LocalTime		timeMidnight = LocalTime.of (0, 0, 0);
@@ -291,7 +291,7 @@ public class Date2Utils {
 	}
 
 	
-	public static LocalDateTime newDateYesterdayNoon () {
+	public static LocalDateTime newDateYesterdayNoon() {
 		
 		LocalDate		dateToday = LocalDate.now().minusDays (1);
 		LocalTime		timeMidnight = LocalTime.of (0, 0, 0);

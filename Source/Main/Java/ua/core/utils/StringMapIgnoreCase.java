@@ -24,7 +24,7 @@ public class StringMapIgnoreCase <ValueType> implements Map <String, ValueType> 
 	
 	public StringMapIgnoreCase() {
 		
-		map = new HashMap <String, ValueType> ();
+		map = new HashMap <String, ValueType>();
 	}
 
 	public StringMapIgnoreCase (int initialCapacity) {
@@ -39,7 +39,7 @@ public class StringMapIgnoreCase <ValueType> implements Map <String, ValueType> 
 	
 	public StringMapIgnoreCase (Map <? extends String, ? extends ValueType> map) {
 		
-		map = new HashMap <String, ValueType> ();
+		map = new HashMap <String, ValueType>();
 		this.putAll (map);
 	}
 
@@ -53,8 +53,8 @@ public class StringMapIgnoreCase <ValueType> implements Map <String, ValueType> 
 	}
 	
 	@Override
-	public void clear () {
-		map.clear ();
+	public void clear() {
+		map.clear();
 	}
 	
 	@Override
@@ -74,8 +74,8 @@ public class StringMapIgnoreCase <ValueType> implements Map <String, ValueType> 
 	}
 	
 	@Override
-	public Set <java.util.Map.Entry <String, ValueType>> entrySet () {
-		return map.entrySet ();
+	public Set <java.util.Map.Entry <String, ValueType>> entrySet() {
+		return map.entrySet();
 	}
 	
 	@Override
@@ -89,8 +89,8 @@ public class StringMapIgnoreCase <ValueType> implements Map <String, ValueType> 
 		}
 	}
 	
-	public List <String> getSortedKeyList () {
-		return CollectionUtils.sort (this.keySet ());
+	public List <String> getSortedKeyList() {
+		return CollectionUtils.sort (this.keySet());
 	}
 
 	public boolean hasKey (String key) {
@@ -98,13 +98,13 @@ public class StringMapIgnoreCase <ValueType> implements Map <String, ValueType> 
 	}
 
 	@Override
-	public boolean isEmpty () {
-		return map.isEmpty ();
+	public boolean isEmpty() {
+		return map.isEmpty();
 	}
 
 	@Override
-	public Set <String> keySet () {
-		return map.keySet ();
+	public Set <String> keySet() {
+		return map.keySet();
 	}
 
 	@Override
@@ -132,13 +132,13 @@ public class StringMapIgnoreCase <ValueType> implements Map <String, ValueType> 
 	}
 
 	@Override
-	public int size () {
-		return map.size ();
+	public int size() {
+		return map.size();
 	}
 	
 	@Override
-	public Collection <ValueType> values () {
-		return map.values ();
+	public Collection <ValueType> values() {
+		return map.values();
 	}
 
 	

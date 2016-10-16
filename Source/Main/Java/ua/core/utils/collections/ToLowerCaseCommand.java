@@ -10,9 +10,9 @@ import ua.core.utils.StringUtils;
 
 
 /**
- * Returns a list of all upper case strings.
+ * Returns a list of all lower case strings.
  */
-public class ToUpperCaseCommand implements CollectionResultCommand <String, List<String>> {
+public class ToLowerCaseCommand implements CollectionResultCommand <String, List<String>> {
 
 	List <String> intList = new ArrayList <String>();
 	
@@ -27,7 +27,7 @@ public class ToUpperCaseCommand implements CollectionResultCommand <String, List
 	@Override
 	public void process (String item) {
 
-		intList.add (StringUtils.toUpperCase (item));
+		intList.add (StringUtils.toLowerCase (item));
 	}
 	
 	public List <String> process (Collection <String> items) {

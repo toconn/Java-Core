@@ -12,7 +12,7 @@ public class FileDirectoryDefault implements FileDirectory {
 	}
 	
 	@Override
-	public String getDirectory () {
+	public String getDirectory() {
 
 		return directoryName;
 	}

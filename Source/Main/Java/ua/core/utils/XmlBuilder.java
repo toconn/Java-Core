@@ -17,21 +17,21 @@ public class XmlBuilder {
 	StringBuilder	xmlBuilder;
 	
 	
-	public XmlBuilder () {
+	public XmlBuilder() {
 		
-		elementNameStack = new Stack <String> ();
-		xmlBuilder = new StringBuilder ();
+		elementNameStack = new Stack <String>();
+		xmlBuilder = new StringBuilder();
 	}
 	
 	public XmlBuilder (int capacity) {
 		
-		elementNameStack = new Stack <String> ();
+		elementNameStack = new Stack <String>();
 		xmlBuilder = new StringBuilder (capacity);
 	}
 	
 	public XmlBuilder (int capacity, String declaration) {
 		
-		elementNameStack = new Stack <String> ();
+		elementNameStack = new Stack <String>();
 		
 		xmlBuilder = new StringBuilder (capacity);
 		xmlBuilder.append (declaration);
@@ -40,9 +40,9 @@ public class XmlBuilder {
 	
 	public XmlBuilder (String declaration) {
 		
-		elementNameStack = new Stack <String> ();
+		elementNameStack = new Stack <String>();
 		
-		xmlBuilder = new StringBuilder ();
+		xmlBuilder = new StringBuilder();
 		xmlBuilder.append (declaration);
 	}
 	
@@ -138,9 +138,9 @@ public class XmlBuilder {
 	 * 
 	 * @return
 	 */
-	public XmlBuilder closeTag () {
+	public XmlBuilder closeTag() {
 		
-		appendTagClose (elementNameStack.pop ());
+		appendTagClose (elementNameStack.pop());
 		
 		return this;
 	}
@@ -175,9 +175,9 @@ public class XmlBuilder {
 	 * Returns the built xml.
 	 * 
 	 */
-	public String toString () {
+	public String toString() {
 		
-		return xmlBuilder.toString ();
+		return xmlBuilder.toString();
 	}
 	
 	

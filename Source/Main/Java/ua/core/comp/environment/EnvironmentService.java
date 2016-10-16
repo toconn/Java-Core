@@ -37,7 +37,7 @@ public class EnvironmentService {
 		
 		// MAIN:
 		
-		list = new ArrayList <String> ();
+		list = new ArrayList <String>();
 		
 		if (CollectionUtils.isNotEmpty (textList)) {
 			
@@ -79,9 +79,9 @@ public class EnvironmentService {
 
 		if (StringUtils.isNotEmpty (envString)) {
 			
-			expandedStringBuilder = new StringBuilder ();
+			expandedStringBuilder = new StringBuilder();
 			
-			while (nextIndex > -1 && previousIndex < envString.length ()) {
+			while (nextIndex > -1 && previousIndex < envString.length()) {
 				
 		    	// find next %
 				
@@ -143,7 +143,7 @@ public class EnvironmentService {
 
 			}
 			
-			if (previousIndex < envString.length ()) {
+			if (previousIndex < envString.length()) {
 				
 				// Append remaining text
 				expandedStringBuilder.append (envString.substring (previousIndex));
@@ -151,7 +151,7 @@ public class EnvironmentService {
 	    	
 	    	// return string
 				
-			return expandedStringBuilder.toString ();
+			return expandedStringBuilder.toString();
 			
 		}
 	    else {
@@ -173,7 +173,7 @@ public class EnvironmentService {
 	 * 
 	 * @return
 	 */
-	public static String getAppDirectory () {
+	public static String getAppDirectory() {
 		
 		// Return the directory the application executable / source is located.
 		
@@ -195,19 +195,19 @@ public class EnvironmentService {
 		// Code:
 		//////////////////////////////////////////////////////////////////
 		
-		osProps			= OSPropertiesFactory.getInstance ();
+		osProps			= OSPropertiesFactory.getInstance();
 
-		className		= getApplicationClass ().getSimpleName() + ".class";
-		classUrl		= getApplicationClass ().getResource (className);
+		className		= getApplicationClass().getSimpleName() + ".class";
+		classUrl		= getApplicationClass().getResource (className);
 		directoryName	= classUrl.getPath();
 		
 		// System.out.println ("class path: " + directoryName);
-		// System.out.println ("class name: " + getApplicationClass().getName ());
+		// System.out.println ("class name: " + getApplicationClass().getName());
 		
 		
 		// Find starting trim location...
 		
-		if (osProps.isOSWindows ()) {
+		if (osProps.isOSWindows()) {
 			if (directoryName.contains (":")) {
 				
 				// Contains URL Descriptor. Remove it.
@@ -242,8 +242,8 @@ public class EnvironmentService {
 			
 			// Trim to class name.
 			
-			// trimEnd = directoryName.length () - getApplicationClass ().getName().length() - 7;
-			trimEnd = directoryName.length () - 7;
+			// trimEnd = directoryName.length() - getApplicationClass().getName().length() - 7;
+			trimEnd = directoryName.length() - 7;
 		}
 		
 		
@@ -254,7 +254,7 @@ public class EnvironmentService {
 		 * 
 
 		System.out.println (directoryName);
-		System.out.println (getApplicationClass ().getName());
+		System.out.println (getApplicationClass().getName());
 		System.out.println (trimStart);
 		System.out.println (trimEnd);
 
@@ -276,7 +276,7 @@ public class EnvironmentService {
 	 * 
 	 * @return
 	 */
-    public static String getAppDataAllDir () {
+    public static String getAppDataAllDir() {
     	
     	// Declarations
     	
@@ -305,7 +305,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-    public static String getAppDataAllDirDefault () {
+    public static String getAppDataAllDirDefault() {
     	
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -320,7 +320,7 @@ public class EnvironmentService {
     	
     	directoryPathList = FileUtils.expandPathToList (getAppDataAllDir());
   
-    	if (directoryPathList != null && directoryPathList.size () > 0) {
+    	if (directoryPathList != null && directoryPathList.size() > 0) {
     		
     		return directoryPathList.get (0);
     	}
@@ -336,7 +336,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-    public static String getAppDataUserDir () {
+    public static String getAppDataUserDir() {
     	
     	// Declarations
     	
@@ -365,7 +365,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-    public static String getAppDataUserDirDefault () {
+    public static String getAppDataUserDirDefault() {
     	
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -380,7 +380,7 @@ public class EnvironmentService {
     	
     	directoryPathList = FileUtils.expandPathToList (getAppDataUserDir());
   
-    	if (directoryPathList != null && directoryPathList.size () > 0) {
+    	if (directoryPathList != null && directoryPathList.size() > 0) {
     		
     		return directoryPathList.get (0);
     	}
@@ -391,7 +391,7 @@ public class EnvironmentService {
     }
 
 
-    public static String getAppDataUserAllDir () {
+    public static String getAppDataUserAllDir() {
     	
     	// Return the generic all application config directory.
 
@@ -404,7 +404,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-	public static String getWorkingDir () {
+	public static String getWorkingDir() {
 		
 		return System.getProperty (JavaConst.JAVA_PROPERTIES_APP_DIR);
 	}
@@ -477,7 +477,7 @@ public class EnvironmentService {
     	
         // Check Application Executable Directory...
 
-        fileDirectory = getAppDirectory ();
+        fileDirectory = getAppDirectory();
 
         if (FileUtils.isFileExists (FileUtils.getPath (fileDirectory, fileName))) {
 
@@ -600,11 +600,11 @@ public class EnvironmentService {
 		// ///////////////////////////////////////////////////////////////
 
     	
-    	fileDirectoryList = new ArrayList <String> ();
+    	fileDirectoryList = new ArrayList <String>();
     	
         // Check Application Executable Directory...
 
-        fileDirectory = getAppDirectory ();
+        fileDirectory = getAppDirectory();
 
         if (FileUtils.isFileExists (FileUtils.getPath (fileDirectory, fileName))) {
 
@@ -680,7 +680,7 @@ public class EnvironmentService {
     
     
     @SuppressWarnings ({"rawtypes" })
-	static Class getApplicationClass () {
+	static Class getApplicationClass() {
     	
     	if (applicationClass != null) {
     		return applicationClass;
@@ -719,7 +719,7 @@ public class EnvironmentService {
 			
 			// A class file ('appdir/package/className.class'):
 			
-			classPath = classPath.substring (0, classPath.length () - fullClassName.length() - 7);	// -1 for '.' in front of class name, -6 for .class
+			classPath = classPath.substring (0, classPath.length() - fullClassName.length() - 7);	// -1 for '.' in front of class name, -6 for .class
 		}
 		
 		if (classPath.contains ("file:")) {

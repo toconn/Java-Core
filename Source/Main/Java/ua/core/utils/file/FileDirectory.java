@@ -11,5 +11,5 @@ package ua.core.utils.file;
  */
 public interface FileDirectory {
 
-	public String getDirectory ();
+	public String getDirectory();
 }

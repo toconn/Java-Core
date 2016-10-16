@@ -58,7 +58,7 @@ public class MoneyUtils {
 	 * Returns the default 0 value for BigDecimal / Money
 	 * 
 	 */
-	public static BigDecimal newZeroAmount () {
+	public static BigDecimal newZeroAmount() {
 		
 		return MONEY_ZERO;
 	}
@@ -98,7 +98,7 @@ public class MoneyUtils {
 	public static String toString (BigDecimal value) {
 		
 		if (value != null) {
-			return value.toString ();
+			return value.toString();
 		}
 		else {
 			return "";

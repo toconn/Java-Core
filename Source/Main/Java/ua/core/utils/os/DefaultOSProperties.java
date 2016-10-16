@@ -40,49 +40,49 @@ class DefaultOSProperties implements OSProperties, OSConst {
 	}
 
 	@Override
-	public String getFileSeparator () {
+	public String getFileSeparator() {
 
 		return fileSeparator;
 	}
 
 	@Override
-	public List <String> getFileSeparators () {
+	public List <String> getFileSeparators() {
 		
 		return FILE_SEPARATORS;
 	}
 
 	@Override
-	public String getNewLine () {
+	public String getNewLine() {
 
 		return newLine;
 	}
 
 	@Override
-	public String getOSName () {
+	public String getOSName() {
 
 		return osName;
 	}
 
 	@Override
-	public String getPathSeparator () {
+	public String getPathSeparator() {
 
 		return pathSeparator;
 	}
 
 	@Override
-	public List <String> getPathSeparators () {
+	public List <String> getPathSeparators() {
 
 		return PATH_SEPARATORS;
 	}
 
 	@Override
-	public boolean isOSOsx () {
+	public boolean isOSOsx() {
 
 		return StringUtils.isEqual (osName, OSX_OS_NAME);
 	}
 
 	@Override
-	public boolean isOSWindows () {
+	public boolean isOSWindows() {
 
 		return StringUtils.isEqual (osName, WINDOWS_OS_NAME);
 	}

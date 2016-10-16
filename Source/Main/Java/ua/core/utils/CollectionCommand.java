@@ -5,7 +5,7 @@ package ua.core.utils;
 * 
 * There may be no results or they may need to be retrieved in a separate call.
 * 
-* Use CollectionUtils.iterateCommand ();
+* Use CollectionUtils.iterateCommand();
 */
 public interface CollectionCommand <Item> {
 	

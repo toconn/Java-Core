@@ -13,7 +13,7 @@ public abstract class ExceptionBase extends Exception {
 	
 	private static final long	serialVersionUID = -3138741202946024745L;
 
-	private List <String>		messageList = new ArrayList <String> ();
+	private List <String>		messageList = new ArrayList <String>();
 
 	
 	public ExceptionBase() {
@@ -69,7 +69,7 @@ public abstract class ExceptionBase extends Exception {
 		return messageList;
 	}
 	
-	public String getMessage () {
+	public String getMessage() {
 	
 		return StringUtils.join (messageList, " ");
 	}

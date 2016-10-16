@@ -27,7 +27,7 @@ public class FileDirectoryLocatorCommand implements CollectionResultCommand <Fil
 	}
 
 	@Override
-	public String getResult () {
+	public String getResult() {
 
 		return directoryName;
 	}
@@ -40,13 +40,13 @@ public class FileDirectoryLocatorCommand implements CollectionResultCommand <Fil
 	@Override
 	public void process (FileDirectory item) throws BreakException {
 
-		if (FileUtils.isFileExists (FileUtils.getPath (item.getDirectory (), fileName))) {
+		if (FileUtils.isFileExists (FileUtils.getPath (item.getDirectory(), fileName))) {
 			
 			// directory found...
 			// Save and exit loop.
 			
-			directoryName = item.getDirectory ();
-			throw new BreakException ();
+			directoryName = item.getDirectory();
+			throw new BreakException();
 		}
 	}
 }

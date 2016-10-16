@@ -11,5 +11,5 @@ public interface ILineReader {
 	 * @return
 	 */
 	public void readLine (String lineString);
-	public void readClose ();
+	public void readClose();
 }

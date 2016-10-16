@@ -16,11 +16,11 @@ import ua.core.utils.NumberUtils;
  */
 public class TextOnlySublistCommand implements CollectionResultCommand <String, List<String>> {
 
-	List <String> intList = new ArrayList <String> ();
+	List <String> intList = new ArrayList <String>();
 	
 	
 	@Override
-	public List <String> getResult () {
+	public List <String> getResult() {
 		
 		return intList;
 	}

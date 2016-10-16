@@ -5,8 +5,8 @@ import ua.core.utils.file.FileDirectory;
 
 public class FileDirectoryApp implements FileDirectory {
 
-	public String getDirectory () {
+	public String getDirectory() {
 		
-		return EnvironmentService.getAppDirectory ();
+		return EnvironmentService.getAppDirectory();
 	}
 }

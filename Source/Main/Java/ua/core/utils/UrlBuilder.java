@@ -10,7 +10,7 @@ public class UrlBuilder {
 	
 	private String url = null;
 	private String subUrl = null;
-	private List<NameValuePair> paramList = new ArrayList <NameValuePair> ();
+	private List<NameValuePair> paramList = new ArrayList <NameValuePair>();
 
 	public UrlBuilder url (String baseUrl) { this.url = baseUrl; return this; }
 	public UrlBuilder subUrl (String subUrl) { this.subUrl = subUrl; return this; }
@@ -25,7 +25,7 @@ public class UrlBuilder {
 		
 		// Build Url:
 		
-		urlStringBuilder = new StringBuilder ();
+		urlStringBuilder = new StringBuilder();
 		
 		urlStringBuilder.append (url);
 		

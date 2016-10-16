@@ -26,7 +26,7 @@ public class PropertyToListCommand <Item, Result> implements CollectionResultCom
 	}
 
 	@Override
-	public List <Result> getResult () {
+	public List <Result> getResult() {
 
 		return resultList;
 	}

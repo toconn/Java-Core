@@ -27,24 +27,24 @@ public class NameValuePair {
 	 */
 	public NameValuePair (String name, String value) {
 
-		super ();
+		super();
 		this.name = name;
 		this.value = value;
 	}
 
 	
-	public String getName () {
+	public String getName() {
 
 		return name;
 	}
 
-	public String getValue () {
+	public String getValue() {
 
 		return value;
 	}
 
 	@Override
-	public String toString () {
+	public String toString() {
 
 		return "NameValue [name=" + name + ", value=" + value + "]";
 	}
